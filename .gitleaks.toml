@@ -1,0 +1,13 @@
+# gitleaks config for the public showcase repo.
+# Extends the default ruleset, then allowlists reviewed false positives.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Reviewed false positives in showcase code"
+regexes = [
+  # Google API pagination kwarg, not a secret: `page_token, maxResults=100`
+  '''maxResults=100''',
+  # Export placeholder left after credential redaction
+  '''REDACTED_SET_VIA_ENV''',
+]

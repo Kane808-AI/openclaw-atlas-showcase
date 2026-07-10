@@ -1,0 +1,22 @@
+{
+  "_comment": "Copy this file to overlay/<tiktok_video_id>.json to enable overlay mode for that clip.",
+  "_when_to_use": "Tool demos, workflow walkthroughs, website teardowns, resource clips, before/after proof. Only when screen proof exists or proof_asset is provided.",
+  "_banner_guidance": "5-8 words max. Proof-first hook. Examples: 'I built this in 20 minutes', 'Free tool most people ignore', 'This replaced my entire workflow'",
+
+  "enabled": true,
+  "banner_text": "REPLACE WITH 5-8 WORD HOOK",
+
+  "proof_asset": null,
+  "_proof_asset_note": "Optional. Absolute path to a screen recording (.mp4) or screenshot (.jpg/.png) to use as the full-frame background. If null, banner is applied to the normalized video as-is.",
+
+  "pip_position": "bottom-right",
+  "_pip_position_options": ["bottom-right", "bottom-left", "top-right", "top-left"],
+
+  "pip_scale": 0.35,
+  "_pip_scale_note": "Chris PIP size relative to frame. 0.35 = 35% of frame dimensions. Range: 0.15–0.6.",
+
+  "banner_font_size": 52,
+  "banner_bg_opacity": 0.80,
+  "banner_padding": 22,
+  "banner_y_offset": 44
+}

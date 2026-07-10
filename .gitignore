@@ -1,0 +1,25 @@
+# This repo is populated by tools/export-from-openclaw.sh.
+# Defense in depth: even if the export misbehaves, these never get committed.
+.env
+.env.*
+*.env
+**/auth-state*.json
+**/auth-profiles*.json
+**/*credential*
+**/*secret*
+**/*.pem
+**/*.key
+**/*.p12
+**/*.sqlite*
+**/sessions/
+**/browser/
+**/user-data/
+**/node_modules/
+**/codex-home/
+**/harness-auth/
+**/__pycache__/
+*.pyc
+.DS_Store
+
+# gitleaks report artifact
+tools/.gitleaks-report.json

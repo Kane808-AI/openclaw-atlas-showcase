@@ -1,0 +1,13 @@
+{
+  "_action_required": "Run GET https://api.heygen.com/v2/avatars with HEYGEN_API_KEY to populate real avatar IDs, then Telegram Chris the available list for approval. Leo blocks render until this key is removed.",
+  "avatars": [
+    {
+      "id": "TBD",
+      "name": "placeholder",
+      "gender": "male",
+      "notes": "Replace with real HeyGen avatar IDs"
+    }
+  ],
+  "last_used": null,
+  "rotation_strategy": "sequential"
+}

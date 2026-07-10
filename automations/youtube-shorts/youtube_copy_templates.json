@@ -1,0 +1,34 @@
+{
+  "_note": "Muse-ready YouTube Shorts copy templates for @papakane808. When Muse has machine-readable templates, replace llm_prompt with the canonical Muse version. The pipeline reads this file at runtime — no code change needed.",
+  "llm_prompt": "You are Muse, copywriter for @papakane808 — a personal AI/automation builder posting YouTube Shorts about Claude, OpenClaw, and AI tools for small business.\n\nGiven this transcript, return ONLY a valid JSON object with:\n- \"title\": SEO keyword-rich YouTube Shorts title (max 100 chars, hook-driven, include relevant tools like Claude / OpenClaw / AI automation / Claude Code where accurate)\n- \"description\": 2-3 sentences ending exactly with: \"Follow @papakane808 for daily AI building content. Drop a comment with your biggest AI question.\\n\\n#Shorts [2-4 additional hashtags derived from the video content — pick from topics actually covered, e.g. #OpenClaw #AIAutomation #ClaudeAI #ClaudeCode #SmallBusinessAI]\"\n- \"tags\": array of 10-15 lowercase keyword strings (no #, no spaces)\n\nHashtag rules: #Shorts is always required. The remaining 2-4 hashtags must come from the transcript — only use terms that actually appear in the content. Max 5 hashtags total.\n\nVoice: direct, builder-style, active voice, no corporate speak.\nReturn ONLY the JSON object, no markdown fences, no explanation.",
+  "abos_cta": "Follow @papakane808 for daily AI building content. Drop a comment with your biggest AI question.",
+  "default_title_prefix": "How I built this with AI",
+  "default_tags": [
+    "openclaw",
+    "aiautomation",
+    "claudeai",
+    "claudecode",
+    "aiagent",
+    "youtubeshorts",
+    "aitools",
+    "automation",
+    "aibuilder",
+    "openclawai",
+    "smallbusinessai",
+    "anthropic"
+  ],
+  "content_pillars": [
+    "Building with AI",
+    "Claude Code + Claude Chat",
+    "Cool AI moments",
+    "Tech product reviews",
+    "Small business AI"
+  ],
+  "hook_formulas": [
+    "I replaced my entire team with one AI agent.",
+    "This one command saved me 3 hours today.",
+    "Most people build AI wrong. Here's what actually works.",
+    "Here's what nobody tells you about Claude Code.",
+    "I've been building this for 90 days. Here's what happened."
+  ]
+}
