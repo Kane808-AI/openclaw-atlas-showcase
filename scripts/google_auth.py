@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Unified Google auth module for Atlas.
 
-Brand75 (support@brand75.com):
+Brand75 (automation@example.com):
     Service account with domain-wide delegation. Never expires.
     Key file: ~/.openclaw/credentials/google/brand75-service-account.json
 
@@ -21,7 +21,7 @@ from google.oauth2.credentials import Credentials
 CREDENTIALS_DIR = Path.home() / ".openclaw" / "credentials" / "google"
 
 BRAND75_SERVICE_ACCOUNT_FILE = CREDENTIALS_DIR / "brand75-service-account.json"
-BRAND75_SUBJECT = "support@brand75.com"
+BRAND75_SUBJECT = "automation@example.com"
 
 PERSONAL_TOKEN_FILE = Path.home() / ".openclaw" / "scripts" / "personal-token.json"
 PERSONAL_CLIENT_FILE = CREDENTIALS_DIR / "personal-gmail-oauth-client.json"
@@ -53,7 +53,7 @@ def get_brand75_credentials(scopes: list[str] | None = None) -> service_account.
                 Kept for API compatibility with callers.
 
     Returns:
-        google.oauth2.service_account.Credentials impersonating support@brand75.com
+        google.oauth2.service_account.Credentials impersonating automation@example.com
     """
     creds = service_account.Credentials.from_service_account_file(
         str(BRAND75_SERVICE_ACCOUNT_FILE),
@@ -64,7 +64,7 @@ def get_brand75_credentials(scopes: list[str] | None = None) -> service_account.
 
 
 def get_brand75_gbp_credentials() -> Credentials:
-    """Load Brand75 GBP OAuth2 credentials for support@brand75.com.
+    """Load Brand75 GBP OAuth2 credentials for automation@example.com.
 
     GBP APIs (mybusinessaccountmanagement, mybusinessbusinessinformation) reject
     service-account/DWD auth with quota_limit_value=0. Only user-consent OAuth works.

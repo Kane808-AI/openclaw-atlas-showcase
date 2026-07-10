@@ -1,4 +1,4 @@
-#!/Users/chriskaneshiro/.openclaw/venv/google/bin/python3
+#!/usr/bin/env python3
 """
 HeyGen → Edit → Publish Pipeline (Format 3)
 
@@ -40,7 +40,7 @@ YOUTUBE_PIPELINE = (
     Path.home() / ".openclaw" / "automations" / "youtube-shorts" / "youtube_shorts_pipeline.py"
 )
 TELEGRAM_TOKEN_FILE = Path.home() / ".openclaw" / "secrets" / "telegram-bot-token"
-TELEGRAM_CHAT_ID = "7556461717"
+TELEGRAM_CHAT_ID = "SHOWCASE_TELEGRAM_CHAT_ID"
 
 FFMPEG_BIN = "/opt/homebrew/bin/ffmpeg"
 FFPROBE_BIN = "/opt/homebrew/bin/ffprobe"

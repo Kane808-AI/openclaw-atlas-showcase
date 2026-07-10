@@ -43,7 +43,7 @@ if [ -z "${TELEGRAM_BOT_TOKEN:-}" ]; then
   exit 1
 fi
 
-CHAT_ID="${TELEGRAM_CHAT_ID:-7556461717}"
+CHAT_ID="${TELEGRAM_CHAT_ID:-SHOWCASE_TELEGRAM_CHAT_ID}"
 MESSAGE="${1:?Usage: notify-telegram.sh \"message text\"}"
 
 curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \

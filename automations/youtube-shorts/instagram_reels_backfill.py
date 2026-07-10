@@ -1,4 +1,4 @@
-#!/Users/chriskaneshiro/.openclaw/venv/google/bin/python3
+#!/usr/bin/env python3
 """
 Instagram Reels Backfill — TikTok @papakane808 → Instagram (Feb 20 2026 onward)
 

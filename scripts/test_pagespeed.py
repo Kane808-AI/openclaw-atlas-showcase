@@ -2,7 +2,7 @@
 """Test PageSpeed API with updated key loading."""
 
 import sys
-sys.path.insert(0, "/Users/chriskaneshiro/.openclaw/scripts")
+sys.path.insert(0, "/Users/example/.openclaw/scripts")
 
 from website_quality_checker import get_pagespeed_score, load_env_key, PAGESPEED_API_KEY
 

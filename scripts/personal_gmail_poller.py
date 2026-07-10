@@ -6,8 +6,8 @@ importance filter, and posts surviving messages to the gateway hook at
 /hooks/personal-gmail. The gateway then runs the LLM, drafts a reply in Gmail,
 and notifies via Telegram.
 
-This is the SOLE authorized reader/writer of ckane703 in Atlas's stack.
-All other tools must continue defaulting to support@brand75.com.
+This is the SOLE authorized reader/writer of personal-account in Atlas's stack.
+All other tools must continue defaulting to automation@example.com.
 
 Usage:
     ~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts/personal_gmail_poller.py

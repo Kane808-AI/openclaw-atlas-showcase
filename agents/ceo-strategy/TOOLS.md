@@ -79,7 +79,7 @@ Within the same tier: closer to completion wins. Finishing beats starting.
 ## Telegram — Reporting
 
 All deploy approvals/rejections go through Telegram.
-- **Chat ID:** 7556461717
+- **Chat ID:** SHOWCASE_TELEGRAM_CHAT_ID
 
 Approval format:
 ```
@@ -101,7 +101,7 @@ Returned to Leo for fixes.
 
 ## Google Sheets — Task Tracking
 
-- **Atlas Tasks sheet:** `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk`
+- **Atlas Tasks sheet:** `SHOWCASE_ATLAS_TASKS_SHEET_ID`
 - **Auth:** `~/.openclaw/scripts/google_auth.py`
 - **Venv:** `~/.openclaw/venv/google/bin/python3`
 

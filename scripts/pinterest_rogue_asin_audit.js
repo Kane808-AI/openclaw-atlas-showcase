@@ -4,7 +4,7 @@
  *
  * Lists all pins on all 5 boards, extracts ASINs from destination URLs,
  * flags:
- *   - any occurrence of the rogue ASIN B07D3H6W2P
+ *   - any occurrence of the rogue ASIN EXAMPLE_ASIN
  *   - any pin whose ASIN doesn't match a manifest entry
  *   - pins with no link or missing board
  */
@@ -18,7 +18,7 @@ const MANIFEST_PATH = path.join(HOME, '.openclaw', 'workspace', 'pinterest_posti
 const BOARDS_PATH = path.join(HOME, '.openclaw', 'credentials', 'pinterest', 'board_ids.json');
 const OUTPUT_PATH = path.join(HOME, '.openclaw', 'workspace', 'pinterest_rogue_asin_audit.json');
 
-const ROGUE_ASIN = 'B07D3H6W2P';
+const ROGUE_ASIN = 'EXAMPLE_ASIN';
 
 function apiGet(url, token) {
   return new Promise((resolve, reject) => {

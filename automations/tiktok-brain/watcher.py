@@ -11,7 +11,7 @@ from watchdog.events import FileSystemEventHandler
 WATCH_FOLDER = os.path.expanduser("~/.openclaw/workspace/inbox")
 SCRIPT = os.path.expanduser("~/.openclaw/automations/tiktok-brain/tiktok_brain.py")
 TELEGRAM_TOKEN_FILE = os.path.expanduser("~/.openclaw/secrets/telegram-bot-token")
-TELEGRAM_CHAT_ID = "7556461717"
+TELEGRAM_CHAT_ID = "SHOWCASE_TELEGRAM_CHAT_ID"
 VIDEO_EXTENSIONS = {".mp4", ".mov", ".m4v"}
 
 

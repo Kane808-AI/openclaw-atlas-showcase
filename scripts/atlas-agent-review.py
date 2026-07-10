@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import json
 import subprocess
-import sys
 from datetime import datetime, timedelta
+import os
 import pytz
 from pathlib import Path
 
@@ -16,11 +16,10 @@ def run_openclaw(cmd, cwd=None):
 def main():
     now_pt = datetime.now(PT)
     yesterday_pt = now_pt - timedelta(days=1)
-    
+
     # Sources
-    import os
-activity_path = os.path.expanduser('~/.openclaw/workspace/data/agent-activity.json')
-activity = json.loads(Path(activity_path).read_text())
+    activity_path = os.path.expanduser('~/.openclaw/workspace/data/agent-activity.json')
+    activity = json.loads(Path(activity_path).read_text())
     sessions = run_openclaw('session list --json --activeMinutes 1440 --messageLimit 1')
     subag = run_openclaw('subagents list --recentMinutes 1440')
     
@@ -58,7 +57,7 @@ activity = json.loads(Path(activity_path).read_text())
     
     # Telegram
     summary = f'📊 AGENT REVIEW {review["date"]}\nActive: {len(review["active_agents"])}\n{review["summary"]}\nActions: {len(review["actions"])}'
-    subprocess.run(['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '7556461717', '--message', summary])
+    subprocess.run(['openclaw', 'message', 'send', '--channel', 'telegram', '--target', 'SHOWCASE_TELEGRAM_CHAT_ID', '--message', summary])
     
     print('Review complete:', obs_path)
 

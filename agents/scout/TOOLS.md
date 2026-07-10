@@ -31,12 +31,12 @@ Status auto-set to "New". Never mark as anything else — Atlas handles status.
 ## Atlas Tasks Sheet
 
 For non-DGC ideas (content angles, Brand75 opportunities, personal TikTok ideas):
-- Sheet ID: `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk`
+- Sheet ID: `SHOWCASE_ATLAS_TASKS_SHEET_ID`
 - Range: `Atlas Tasks!A:K`
 - Append via:
 ```bash
 ~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts/google_sheets_tool.py append \
-  1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk "Atlas Tasks!A:K" \
+  SHOWCASE_ATLAS_TASKS_SHEET_ID "Atlas Tasks!A:K" \
   --values-json '[["idea", "...", "inbox", "...", ...]]'
 ```
 

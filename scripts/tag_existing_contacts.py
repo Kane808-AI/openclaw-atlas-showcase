@@ -8,7 +8,7 @@ from pathlib import Path
 
 # Config
 ENV_PATH = Path.home() / ".openclaw/.env"
-LOCATION_ID = "WbjKV1nKqrMFAFBwAplZ"
+LOCATION_ID = "SHOWCASE_GHL_LOCATION_ID"
 GHL_BASE = "https://services.leadconnectorhq.com/contacts/"
 
 # Load env

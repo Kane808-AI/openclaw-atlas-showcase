@@ -14,7 +14,7 @@ Skills are NOT callable tools. Use `exec` to run them as shell commands.
 
 - **Base URL:** `https://services.leadconnectorhq.com`
 - **API key:** `~/.openclaw/.env` as `GHL_API_KEY` (pit- prefix is part of the key, never strip it)
-- **Location ID:** `WbjKV1nKqrMFAFBwAplZ` (Brand75)
+- **Location ID:** `SHOWCASE_GHL_LOCATION_ID` (Brand75)
 - **Version header:** `2021-07-28`
 - **Full reference:** `~/.openclaw/workspace/memory/ghl/`
 
@@ -55,7 +55,7 @@ Skills are NOT callable tools. Use `exec` to run them as shell commands.
 ## Telegram — Reporting
 
 All lead notifications and reports go through Telegram via the Atlas integration.
-- **Chat ID:** 7556461717
+- **Chat ID:** SHOWCASE_TELEGRAM_CHAT_ID
 - Use for: new lead alerts, pipeline status updates, weekly reports
 
 Report format:
@@ -70,7 +70,7 @@ Next step: [action]
 
 ## Google Sheets — Pipeline Tracking
 
-- **Atlas Tasks sheet:** `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk`
+- **Atlas Tasks sheet:** `SHOWCASE_ATLAS_TASKS_SHEET_ID`
 - **Auth:** `~/.openclaw/scripts/google_auth.py`
 - **Venv:** `~/.openclaw/venv/google/bin/python3`
 

@@ -18,7 +18,7 @@ const BOARDS_PATH = path.join(HOME, '.openclaw', 'credentials', 'pinterest', 'bo
 const LOG_PATH = path.join(HOME, '.openclaw', 'workspace', 'pinterest_rogue_deletion_log.json');
 
 const ROGUES = [
-  { pin_id: '502644008433308860', board: 'ai_smart_home',   asin: 'B07D3H6W2P', title: 'Peace of Mind: Smart Sensors for Every Home!' },
+  { pin_id: '502644008433308860', board: 'ai_smart_home',   asin: 'EXAMPLE_ASIN', title: 'Peace of Mind: Smart Sensors for Every Home!' },
   { pin_id: '502644008433308967', board: 'audio_recording', asin: 'B01M0LIEF3', title: 'Budget Mic Kit: Your Recording Journey Starts Here!' },
   { pin_id: '502644008433309025', board: 'tech_gifts_dads', asin: 'B08J62283Q', title: 'Never Lose Anything Again! Tile Mate for Dad' },
   { pin_id: '502644008433309060', board: 'portable_power',  asin: 'B0BZV8V12K', title: 'Tidy Tech Travel: Alpaka Organizer Case!' },

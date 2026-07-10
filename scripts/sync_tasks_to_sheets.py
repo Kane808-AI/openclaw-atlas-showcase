@@ -12,7 +12,7 @@ from google_auth import get_brand75_credentials
 from googleapiclient.discovery import build
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file"]
-SPREADSHEET_ID = "1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk"
+SPREADSHEET_ID = "SHOWCASE_ATLAS_TASKS_SHEET_ID"
 SHEET_NAME = "Atlas Tasks"
 DB_PATH = os.path.expanduser("~/.openclaw/workspace/tasks.db")
 

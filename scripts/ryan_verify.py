@@ -47,7 +47,7 @@ DELIVERABLES_COPY = WORKSPACE / "agents" / "copywriter" / "deliverables"
 # --- GHL ---
 GHL_BASE = "https://services.leadconnectorhq.com"
 GHL_VERSION = "2021-07-28"
-GHL_LOCATION_ID = "WbjKV1nKqrMFAFBwAplZ"
+GHL_LOCATION_ID = "SHOWCASE_GHL_LOCATION_ID"
 
 # --- Placeholder patterns ---
 PLACEHOLDER_PATTERNS = ["[INSERT", "TODO", "PLACEHOLDER", "###", "[YOUR"]
@@ -65,7 +65,7 @@ if ENV_PATH.exists():
 GHL_KEY = _env.get("GHL_API_KEY", "")
 LOCATION_ID = _env.get("GHL_LOCATION_ID", GHL_LOCATION_ID)
 TELEGRAM_TOKEN = _env.get("TELEGRAM_BOT_TOKEN", "")
-TELEGRAM_CHAT_ID = _env.get("TELEGRAM_CHAT_ID", "7556461717")
+TELEGRAM_CHAT_ID = _env.get("TELEGRAM_CHAT_ID", "SHOWCASE_TELEGRAM_CHAT_ID")
 
 
 def ghl_headers():

@@ -59,12 +59,12 @@ Read agent outputs from:
 
 ## Google Sheets (for cross-referencing)
 
-Atlas Tasks Sheet: `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk`
+Atlas Tasks Sheet: `SHOWCASE_ATLAS_TASKS_SHEET_ID`
 
 Read via:
 ```bash
 ~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts/google_sheets_tool.py \
-  read 1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk "Atlas Tasks!A:K"
+  read SHOWCASE_ATLAS_TASKS_SHEET_ID "Atlas Tasks!A:K"
 ```
 
 ## Memory Files Reference

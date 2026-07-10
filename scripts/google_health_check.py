@@ -58,7 +58,7 @@ def brand75_sheets():
     creds = get_brand75_credentials(["https://www.googleapis.com/auth/spreadsheets.readonly"])
     svc = build("sheets", "v4", credentials=creds)
     # Test with TikTok Brain sheet
-    result = svc.spreadsheets().get(spreadsheetId="1wvmJxXQgaAgR0rBNZkGbeOzJtJ6s3m4KSLCszv4AHqU").execute()
+    result = svc.spreadsheets().get(spreadsheetId="SHOWCASE_HEALTHCHECK_SHEET_ID").execute()
     return f"Sheets OK ({result['properties']['title']})"
 
 
@@ -95,7 +95,7 @@ def personal_sheets():
     creds = get_personal_credentials()
     svc = build("sheets", "v4", credentials=creds)
     result = svc.spreadsheets().get(
-        spreadsheetId="1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk"
+        spreadsheetId="SHOWCASE_ATLAS_TASKS_SHEET_ID"
     ).execute()
     return f"Sheets OK ({result['properties']['title']})"
 

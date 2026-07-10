@@ -16,7 +16,7 @@ const path = require('path');
 const http = require('http');
 const { exec } = require('child_process');
 
-const CLIENT_ID = '1557764';
+const CLIENT_ID = 'SHOWCASE_PINTEREST_CLIENT_ID';
 const CLIENT_SECRET = 'REDACTED_SET_VIA_ENV';
 const REDIRECT_URI = 'http://localhost:8085/callback';
 const SCOPES = 'boards:read,boards:write,pins:read,pins:write,user_accounts:read';

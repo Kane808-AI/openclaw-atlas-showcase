@@ -22,16 +22,16 @@ import google_auth
 
 ACCOUNTS = [
     {
-        "label": "ckane703",
+        "label": "personal-account",
         "email": "you@example.com",
         "get_creds": google_auth.get_personal_credentials,
         "topic": "projects/primeval-proton-487909-k9/topics/gog-gmail-watch",
     },
     {
         "label": "Brand75",
-        "email": "support@brand75.com",
+        "email": "automation@example.com",
         "get_creds": google_auth.get_brand75_credentials,
-        "topic": "projects/openclaw-brand75-488404/topics/gog-gmail-watch",
+        "topic": "projects/showcase-gcp-project/topics/gog-gmail-watch",
     },
 ]
 

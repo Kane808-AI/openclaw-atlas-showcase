@@ -51,14 +51,14 @@ Read the relevant skill before executing these workflow types:
 
 ## Google Workspace
 
-- Auth: `~/.openclaw/scripts/google_auth.py` (support@brand75.com service account)
+- Auth: `~/.openclaw/scripts/google_auth.py` (automation@example.com service account)
 - Venv: `~/.openclaw/venv/google/bin/python3`
 - Sheets: `~/.openclaw/scripts/google_sheets_tool.py`
 - Calendar: `~/.openclaw/scripts/add_calendar_event.py`
-- All Google ops under support@brand75.com. Never you@example.com.
+- All Google ops under automation@example.com. Never you@example.com.
 
 Content calendar lives in Google Sheets. Check Atlas Tasks Sheet for content queue:
-- Sheet ID: `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk`
+- Sheet ID: `SHOWCASE_ATLAS_TASKS_SHEET_ID`
 
 ## Slack Notifications
 
@@ -94,4 +94,4 @@ exec("ddgs-search 'query' 5 duckduckgo")
 - All state verification by reading filesystem directly. Never infer from memory.
 - Verify before reporting: read the DB, check the log, confirm the row.
 - Never write secrets into workspace files.
-- All automation under support@brand75.com account. Never you@example.com.
+- All automation under automation@example.com account. Never you@example.com.

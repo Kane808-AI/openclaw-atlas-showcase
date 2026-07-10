@@ -10,7 +10,7 @@ import json
 import sys
 from pathlib import Path
 
-CLIENT_ID = "1557764"
+CLIENT_ID = "SHOWCASE_PINTEREST_CLIENT_ID"
 REDIRECT_URI = "http://localhost:8080/callback"
 SCOPES = "boards:read,boards:write,pins:read,pins:write,user_accounts:read"
 TOKEN_PATH = Path.home() / ".openclaw/credentials/pinterest/token.json"
