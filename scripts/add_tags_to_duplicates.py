@@ -21,7 +21,7 @@ if ENV_PATH.exists():
                 env[k.strip()] = v.strip().strip('"').strip("'")
 
 GHL_KEY = env.get("GHL_API_KEY", "")
-LOCATION_ID = "WbjKV1nKqrMFAFBwAplZ"
+LOCATION_ID = "SHOWCASE_GHL_LOCATION_ID"
 GHL_BASE = "https://services.leadconnectorhq.com/contacts/"
 
 GHL_HEADERS = {
@@ -199,4 +199,33 @@ def main():
                 
                 if contacts:
                     # Take the first matching contact
-                    contact_id = contacts[0]['
+                    contact_id = contacts[0].get('id')
+                    if not contact_id:
+                        print("  No contact id returned")
+                        not_found_count += 1
+                        continue
+                    if add_tag_to_contact(contact_id, 'bad-website'):
+                        print(f"  Tagged contact {contact_id}")
+                        success_count += 1
+                    else:
+                        print(f"  Failed to tag contact {contact_id}")
+                        fail_count += 1
+                else:
+                    print("  No matching contact found")
+                    not_found_count += 1
+            else:
+                print(f"  Search failed: HTTP {resp.status_code}")
+                fail_count += 1
+        except Exception as exc:
+            print(f"  Error: {exc}")
+            fail_count += 1
+
+    print()
+    print("=" * 80)
+    print(f"Tagged: {success_count}")
+    print(f"Failed: {fail_count}")
+    print(f"Not found: {not_found_count}")
+
+
+if __name__ == "__main__":
+    main()

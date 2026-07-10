@@ -1,4 +1,4 @@
-#!/Users/chriskaneshiro/.openclaw/venv/google/bin/python3
+#!/usr/bin/env python3
 """
 YouTube Shorts + Instagram Reels Pipeline — @papakane808 TikTok → YouTube + Instagram
 
@@ -71,8 +71,8 @@ MAX_VIDEO_AGE_DAYS = 3  # Skip TikTok videos older than this (don't backfill old
 # ── Instagram / GCS config ─────────────────────────────────────────────────────
 
 IG_API_BASE = "https://graph.facebook.com/v21.0"
-IG_GCS_BUCKET = "openclaw-instagram-staging"
-IG_GCS_PROJECT = "openclaw-brand75-488404"
+IG_GCS_BUCKET = "showcase-instagram-staging"
+IG_GCS_PROJECT = "showcase-gcp-project"
 IG_SA_FILE = Path.home() / ".openclaw" / "credentials" / "google" / "brand75-service-account.json"
 IG_CONTAINER_TIMEOUT_SECS = 600   # 10 min max wait for Instagram to process container (bumped from 300 — intermittent timeout failures)
 IG_CONTAINER_POLL_SECS = 10
@@ -727,7 +727,7 @@ def _stage_to_gcs(video_path: Path, video_id: str) -> str:
 
     Requires one-time GCS setup. If bucket/permissions are missing, run:
       ~/.openclaw/automations/youtube-shorts/setup_instagram_gcs.sh
-    (after: gcloud auth login --account support@brand75.com)
+    (after: gcloud auth login --account automation@example.com)
     """
     import datetime as dt
     from google.cloud import storage

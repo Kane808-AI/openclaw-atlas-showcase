@@ -15,7 +15,7 @@ Bad website = missing SSL OR missing mobile viewport OR low PageSpeed score
 """
 
 import sys
-sys.path.insert(0, "/Users/chriskaneshiro/.openclaw/scripts")
+sys.path.insert(0, "/Users/example/.openclaw/scripts")
 
 import json
 import re
@@ -32,7 +32,7 @@ CACHE_FILE = Path.home() / ".openclaw/data/ghl_posted.json"
 LOG_DIR = Path.home() / ".openclaw/logs"
 LOG_FILE = LOG_DIR / "ghl_post.log"
 GHL_BASE = "https://services.leadconnectorhq.com/contacts/"
-LOCATION_ID = "WbjKV1nKqrMFAFBwAplZ"
+LOCATION_ID = "SHOWCASE_GHL_LOCATION_ID"
 PLACES_TEXT_SEARCH = "https://maps.googleapis.com/maps/api/place/textsearch/json"
 PLACES_DETAILS = "https://maps.googleapis.com/maps/api/place/details/json"
 HUNTER_BASE = "https://api.hunter.io/v2/domain-search"

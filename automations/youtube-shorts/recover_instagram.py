@@ -1,4 +1,4 @@
-#!/Users/chriskaneshiro/.openclaw/venv/google/bin/python3
+#!/usr/bin/env python3
 """
 Instagram recovery script — re-posts to Instagram for TikTok IDs that uploaded to
 YouTube but missed Instagram. Appends backfill-style entries to tracking_log.jsonl.

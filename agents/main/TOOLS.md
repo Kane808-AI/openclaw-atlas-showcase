@@ -47,8 +47,8 @@ Rules:
 
 - Auth: `~/.openclaw/scripts/google_auth.py`
 - Venv: `~/.openclaw/venv/google/bin/python3`
-- Primary account: support@brand75.com (never you@example.com for automation)
-- Calendar ID: `primary` (always support@brand75.com primary calendar)
+- Primary account: automation@example.com (never you@example.com for automation)
+- Calendar ID: `primary` (always automation@example.com primary calendar)
 
 Quick commands (prefix: `~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts/`):
 - Sheets read: `google_sheets_tool.py read SHEET_ID "Sheet1!A1:Z100"`
@@ -58,13 +58,13 @@ Quick commands (prefix: `~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts
 - Health check: `google_health_check.py`
 - Calendar: `add_calendar_event.py --summary "T" --start-time 2026-05-01T10:00:00 --end-time 2026-05-01T10:30:00`
 
-Atlas Tasks Sheet: `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk` (range `Atlas Tasks!A:K`)
+Atlas Tasks Sheet: `SHOWCASE_ATLAS_TASKS_SHEET_ID` (range `Atlas Tasks!A:K`)
 
 ## GoHighLevel (GHL) API
 
 - Base URL: `https://services.leadconnectorhq.com`
 - API Key: `~/.openclaw/.env` as `GHL_API_KEY` (pit- prefix is part of the key — never strip it)
-- Location ID (Brand75): `WbjKV1nKqrMFAFBwAplZ`
+- Location ID (Brand75): `SHOWCASE_GHL_LOCATION_ID`
 - Version header: `2021-07-28`
 
 Rules:
@@ -116,7 +116,7 @@ Write status entries to `~/.openclaw/workspace/data/agent-activity.json` at task
 
 ## Slack Messaging
 
-Chris chat ID: `7556461717`
+Chris chat ID: `SHOWCASE_TELEGRAM_CHAT_ID`
 
 All completion reports go to #atlas. Per-agent reports go to each agent's own channel (see AGENTS.md for channel list).
 

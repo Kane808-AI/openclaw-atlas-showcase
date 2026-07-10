@@ -93,7 +93,7 @@ On a trigger phrase: confirm intake inputs are present (per the SOP's Section 2)
   locationId in POST body, phone numbers in E.164 format
 - 422 on GHL contact creation = duplicate = success, do not retry
 - Check KNOWN_ISSUES.md before diagnosing any recurring problem
-- All calendar events must be created on the support@brand75.com calendar. Never create calendar events on you@example.com.
+- All calendar events must be created on the automation@example.com calendar. Never create calendar events on you@example.com.
 - Sub-agents spawn with mode="run" — never thread=true
 
 ## Autonomy Tiers — File & Config Boundaries

@@ -13,14 +13,14 @@ Use `duckduckgo` or `bing` backend only. Google backend has a TTY bug in non-int
 Koa uses Google Sheets for tracking, reports, and content calendars.
 
 - Venv: `~/.openclaw/venv/google/bin/python3`
-- Primary account: support@brand75.com
+- Primary account: automation@example.com
 
 Quick commands (prefix: `~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts/`):
 - Sheets read: `google_sheets_tool.py read SHEET_ID "Sheet1!A1:Z100"`
 - Sheets append: `google_sheets_tool.py append SHEET_ID "Sheet1!A:F" --values-json '[["a","b"]]'`
 - Drive search: `read_gdoc_by_title.py "search words"`
 
-Atlas Tasks Sheet: `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk` (range `Atlas Tasks!A:K`)
+Atlas Tasks Sheet: `SHOWCASE_ATLAS_TASKS_SHEET_ID` (range `Atlas Tasks!A:K`)
 
 ## GSC (Google Search Console)
 
@@ -77,4 +77,4 @@ All reports go to #koa-cmo. Copy briefs go directly to Muse in #muse-copywriter.
 - TOOLS.md hard limit: 10,000 characters. Silent truncation above this.
 - Koa directs — does not execute. Never post content, build pages, or implement technically.
 - Never write secrets into workspace files.
-- All automation under support@brand75.com.
+- All automation under automation@example.com.

@@ -13,19 +13,19 @@
 
 ## Google APIs
 
-- Auth: `~/.openclaw/scripts/google_auth.py` (service account: support@brand75.com)
+- Auth: `~/.openclaw/scripts/google_auth.py` (service account: automation@example.com)
 - Python interpreter: `~/.openclaw/venv/google/bin/python3`
 - GA4 reporting: via Brand75 service account
 - Google Business Profile: via Google My Business API (Places API key: GOOGLE_PLACES_API_KEY)
 - Sheets: `~/.openclaw/scripts/google_sheets_tool.py`
-- All Google ops under support@brand75.com. Never you@example.com.
+- All Google ops under automation@example.com. Never you@example.com.
 
 ## Telegram Notification
 
 - Script: `~/.openclaw/workspace/scripts/social-monitor/telegram_notify.py`
 - Bot token: `~/.openclaw/.env` as `TELEGRAM_BOT_TOKEN`
-- Chris chat ID: 7556461717 (also in .env as `TELEGRAM_CHAT_ID`)
-- Telegram group: -1003529544521
+- Chris chat ID: SHOWCASE_TELEGRAM_CHAT_ID (also in .env as `TELEGRAM_CHAT_ID`)
+- Telegram group: SHOWCASE_TELEGRAM_GROUP_ID
 - Use for: negative GMB review alerts (immediate), lead signal routing to Nova, critical citation losses
 
 ## State File

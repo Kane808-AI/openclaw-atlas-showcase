@@ -41,7 +41,7 @@ Create docs via:
 ~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts/google_docs_tool.py create --title "Title" --content "..."
 ```
 
-Always use support@brand75.com account.
+Always use automation@example.com account.
 
 ## Slack Reporting
 

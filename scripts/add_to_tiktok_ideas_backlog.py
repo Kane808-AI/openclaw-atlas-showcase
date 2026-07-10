@@ -16,7 +16,7 @@ CREDENTIALS_DIR = os.path.expanduser('~/.openclaw/credentials/google/')
 CLIENT_SECRETS_FILE = os.path.join(CREDENTIALS_DIR, 'brand75-gmail-oauth-client.json')
 TOKEN_FILE = os.path.join(CREDENTIALS_DIR, 'brand75-brain-token.json')
 
-SPREADSHEET_ID = '1luBDNwjl7Ogdk0zAXsXjfF3uCCO7GYAkElBeVSfzvOE' # TikTok Ideas Backlog
+SPREADSHEET_ID = 'SHOWCASE_TIKTOK_IDEAS_SHEET_ID' # TikTok Ideas Backlog
 
 def get_sheets_service():
     creds = None

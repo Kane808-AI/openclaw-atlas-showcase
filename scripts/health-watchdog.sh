@@ -81,7 +81,7 @@ Run health-watchdog.sh manually to recheck."
 
   "$NOTIFY" "$ALERT_MSG" 2>/dev/null || \
     curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-      -d chat_id="${TELEGRAM_CHAT_ID:-7556461717}" \
+      -d chat_id="${TELEGRAM_CHAT_ID:-SHOWCASE_TELEGRAM_CHAT_ID}" \
       -d text="$ALERT_MSG" > /dev/null 2>&1 || \
     log "CRITICAL: could not send alert via any method"
 else

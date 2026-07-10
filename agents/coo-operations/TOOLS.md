@@ -75,7 +75,7 @@ curl -s -H "X-N8N-API-KEY: $(cat ~/.openclaw/secrets/n8n-api-key)" \
 ## Telegram — Alerting
 
 All alerts route through Telegram via Atlas integration.
-- **Chat ID:** 7556461717
+- **Chat ID:** SHOWCASE_TELEGRAM_CHAT_ID
 
 Alert format by severity:
 ```
@@ -98,8 +98,8 @@ Owner: [responsible agent]
 
 - **Auth:** `~/.openclaw/scripts/google_auth.py`
 - **Venv:** `~/.openclaw/venv/google/bin/python3`
-- **GCP project:** `openclaw-brand75-488404`
-- **Account:** support@brand75.com
+- **GCP project:** `showcase-gcp-project`
+- **Account:** automation@example.com
 
 Use for: checking service account health, verifying token refreshes, reading operational data from Sheets.
 

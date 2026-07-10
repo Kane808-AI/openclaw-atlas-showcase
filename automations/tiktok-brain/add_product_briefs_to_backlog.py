@@ -7,8 +7,8 @@ from google.auth.exceptions import RefreshError
 import datetime
 
 # Google Sheets ID and URL from TOOLS.md
-SPREADSHEET_ID = '1luBDNwjl7Ogdk0zAXsXjfF3uCCO7GYAkElBeVSfzvOE'
-SHEET_URL = 'https://docs.google.com/spreadsheets/d/1luBDNwjl7Ogdk0zAXsXjfF3uCCO7GYAkElBeVSfzvOE'
+SPREADSHEET_ID = 'SHOWCASE_TIKTOK_IDEAS_SHEET_ID'
+SHEET_URL = 'https://docs.google.com/spreadsheets/d/SHOWCASE_TIKTOK_IDEAS_SHEET_ID'
 
 # Path to token file
 TOKEN_PATH = os.path.expanduser('~/.openclaw/credentials/google/brand75-brain-token.json')

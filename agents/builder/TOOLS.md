@@ -51,7 +51,7 @@ Robot access: ensure AI crawlers are NOT blocked in Cloudflare rules (no User-Ag
 
 - Base URL: `https://services.leadconnectorhq.com`
 - API Key: `~/.openclaw/.env` as `GHL_API_KEY` (pit- prefix is part of the key)
-- Location ID (Brand75): `WbjKV1nKqrMFAFBwAplZ`
+- Location ID (Brand75): `SHOWCASE_GHL_LOCATION_ID`
 - Version header: `2021-07-28`
 - `locationId` always a query parameter, never a header
 - Trailing slash on `/contacts/`
@@ -69,7 +69,7 @@ Leo builds n8n workflows programmatically via API. Chris activates them via UI.
 
 - Venv: `~/.openclaw/venv/google/bin/python3`
 - Auth: `~/.openclaw/scripts/google_auth.py`
-- Primary account: support@brand75.com
+- Primary account: automation@example.com
 
 Quick commands:
 - Sheets: `google_sheets_tool.py read/append SHEET_ID "range"`

@@ -2,7 +2,7 @@
 """Quality check cached plumber websites from previous scrapes."""
 
 import sys
-sys.path.insert(0, "/Users/chriskaneshiro/.openclaw/scripts")
+sys.path.insert(0, "/Users/example/.openclaw/scripts")
 
 import re
 import json

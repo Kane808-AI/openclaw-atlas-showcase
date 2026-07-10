@@ -324,7 +324,7 @@ class ThumbnailHandler(BaseHTTPRequestHandler):
             # Telegram notification
             env_vars   = _load_env()
             bot_token  = env_vars.get("TELEGRAM_BOT_TOKEN", "")
-            chat_id    = env_vars.get("TELEGRAM_CHAT_ID", "7556461717")
+            chat_id    = env_vars.get("TELEGRAM_CHAT_ID", "SHOWCASE_TELEGRAM_CHAT_ID")
             tg_sent    = False
             if bot_token:
                 msg = (

@@ -8,7 +8,7 @@ from pathlib import Path
 
 # Config
 ENV_PATH = Path.home() / ".openclaw/.env"
-LOCATION_ID = "WbjKV1nKqrMFAFBwAplZ"
+LOCATION_ID = "SHOWCASE_GHL_LOCATION_ID"
 GHL_BASE = "https://services.leadconnectorhq.com/contacts/"
 
 # Load env
@@ -229,4 +229,12 @@ def main():
     print("=" * 80)
     print("RESULTS")
     print("=" * 80)
-    print(f"Atlas-scraper contacts checked:      {len(tag
+    print(f"Atlas-scraper contacts checked:      {len(tagged_contacts)}")
+    print(f"Newly tagged:                       {len(newly_tagged)}")
+    print(f"Already tagged:                     {len(already_tagged)}")
+    print(f"Failed updates:                     {len(failed_updates)}")
+    print(f"No match:                           {len(no_match)}")
+
+
+if __name__ == "__main__":
+    main()

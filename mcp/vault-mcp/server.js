@@ -13,6 +13,10 @@ const CLIENT_ID = process.env.VAULT_MCP_CLIENT_ID;
 const CLIENT_SECRET = process.env.VAULT_MCP_CLIENT_SECRET;
 const PORT = 13337;
 const PUBLIC_HOST = process.env.VAULT_MCP_PUBLIC_HOST || 'chriss-mac-mini.tailnet.example.ts.net';
+const ALLOWED_ORIGINS = (process.env.VAULT_MCP_ALLOWED_ORIGINS || '')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 // The OAuth authorization server lives at the domain root — claude.ai's MCP
 // connector constructs /authorize and /oauth/token from the hostname only,
 // ignoring any path component in the metadata. So we host OAuth at root and
@@ -152,7 +156,13 @@ app.use(express.urlencoded({ extended: false }));
 // AND before app.all('/mcp') — otherwise OPTIONS reaches the MCP transport,
 // which only handles GET/POST/DELETE and returns 405 for everything else.
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+  const origin = req.headers.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  } else if (!origin) {
+    res.setHeader('Access-Control-Allow-Origin', 'null');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers',
     'Content-Type, Authorization, Mcp-Session-Id, MCP-Protocol-Version, Last-Event-ID');

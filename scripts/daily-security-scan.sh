@@ -14,7 +14,7 @@
 set -o pipefail
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
-HOME_DIR="/Users/chriskaneshiro"
+HOME_DIR="/Users/example"
 OPENCLAW_DIR="$HOME_DIR/.openclaw"
 WORKSPACE_DIR="$OPENCLAW_DIR/workspace"
 PLIST_PATH="$HOME_DIR/Library/LaunchAgents/ai.openclaw.gateway.plist"
@@ -36,7 +36,7 @@ DOW="$(date +%u)"  # 1=Mon, 7=Sun
 IS_SUNDAY=false
 [ "$DOW" -eq 7 ] && IS_SUNDAY=true
 
-TELEGRAM_CHAT_ID="7556461717"
+TELEGRAM_CHAT_ID="SHOWCASE_TELEGRAM_CHAT_ID"
 
 # ─── Setup ────────────────────────────────────────────────────────────────────
 mkdir -p "$LOG_DIR"
@@ -50,8 +50,9 @@ log "Security scan started: $TIMESTAMP"
 log "=========================================="
 
 # ─── Telegram ─────────────────────────────────────────────────────────────────
-# Token read at runtime from plist — never hardcoded in this script
-TELEGRAM_BOT_TOKEN="REDACTED_SET_VIA_ENV"$PLIST_PATH" 2>/dev/null || true)"
+# Token read from the environment in the public showcase. The private
+# deployment can source this from launchd, a secret manager, or an env file.
+TELEGRAM_BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
 
 send_telegram() {
     local msg="$1"
@@ -127,7 +128,7 @@ fi
 
 # A2. Check for sensitive file patterns tracked in git
 log "Checking git-tracked secret files..."
-TRACKED_SECRETS="REDACTED_SET_VIA_ENV"$WORKSPACE_DIR" ls-files 2>/dev/null \
+TRACKED_SECRETS="$(git -C "$WORKSPACE_DIR" ls-files 2>/dev/null \
     | grep -E '(\.env$|auth-profiles\.json|recovery-token\.txt|credentials\.json|\.key$|\.pem$|personal-token\.json|service-account\.json)' \
     || true)"
 if [ -n "$TRACKED_SECRETS" ]; then

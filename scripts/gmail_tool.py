@@ -69,7 +69,7 @@ def action_read(service, message_id: str) -> dict:
     return result
 
 def action_draft(service, to: str, subject: str, body: str, thread_id: str = "", account: str = "brand75") -> dict:
-    user_id = "support@brand75.com" if account == "brand75" else "me"
+    user_id = "automation@example.com" if account == "brand75" else "me"
     if not subject.lower().startswith("re:"):
         subject = f"Re: {subject}"
     msg = MIMEText(body)

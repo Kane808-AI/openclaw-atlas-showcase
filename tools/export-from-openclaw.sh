@@ -92,17 +92,34 @@ find "$DEST" -type f \( -name '*.md' -o -name '*.py' -o -name '*.sh' -o -name '*
 while IFS= read -r -d '' f; do
   LC_ALL=C sed -i '' \
     -e 's/ckane703@gmail\.com/you@example.com/g' \
+    -e 's/support@brand75\.com/automation@example.com/g' \
+    -e 's#/Users/chriskaneshiro#/Users/example#g' \
     -e 's/[0-9]\{3\}[-.][0-9]\{3\}[-.][0-9]\{4\}/[redacted-phone]/g' \
     -e 's#https://discord\.com/api/webhooks/[0-9A-Za-z_/-]*#[redacted-webhook]#g' \
     -e 's#https://hooks\.slack\.com/[0-9A-Za-z_/-]*#[redacted-webhook]#g' \
     -e 's/100\.\([0-9]\{1,3\}\.\)\{2\}[0-9]\{1,3\}/100.x.x.x/g' \
     -e 's/[a-z0-9-]\{3,\}\.ts\.net/tailnet.example.ts.net/g' \
     "$f"
+  perl -i -pe '
+    s#https://docs\.google\.com/spreadsheets/d/[A-Za-z0-9_-]{25,}#https://docs.google.com/spreadsheets/d/SHOWCASE_GOOGLE_SHEET_ID#g;
+    s#\b1[A-Za-z0-9_-]{25,}\b#SHOWCASE_GOOGLE_RESOURCE_ID#g;
+    s#\b[0-9]{8,}\b#SHOWCASE_NUMERIC_ID#g;
+    s#\b-[0-9]{8,}\b#SHOWCASE_NUMERIC_ID#g;
+    s#\b[A-Za-z0-9_-]{12,}\.iam\.gserviceaccount\.com#showcase-automation\@showcase-project.iam.gserviceaccount.com#g;
+    s#\b[a-z][a-z0-9-]{4,}-[a-z0-9-]{4,}-[0-9]{4,}\b#showcase-gcp-project#g;
+  ' "$f"
   # Neutralize any hardcoded credential assignment: NAME = "literal" where
   # NAME looks sensitive. Value is replaced with a placeholder so the script
   # still demonstrates the pattern without leaking. Permanent rule, not a patch.
-  perl -i -pe 's/((?:SECRET|TOKEN|API_?KEY|api_key|PASSWORD|CLIENT_SECRET|BEARER|PRIVATE_?KEY|ACCESS_?TOKEN)\w*\s*[:=]\s*)(["\x27])(?!https?:\/\/)[^"\x27]{8,}\2/${1}${2}REDACTED_SET_VIA_ENV${2}/gi' "$f"
+  perl -i -pe 's/^(\s*(?:[A-Z0-9_]*?(?:SECRET|TOKEN|API_?KEY|PASSWORD|CLIENT_SECRET|BEARER|PRIVATE_?KEY|ACCESS_?TOKEN)[A-Z0-9_]*|api_key)\s*[:=]\s*)(["\x27])(?!https?:\/\/)(?!.*\$\()[^"\x27]{8,}\2/${1}${2}REDACTED_SET_VIA_ENV${2}/gi' "$f"
 done
+
+echo "==> syntax sanity checks"
+find "$DEST" -type f -name '*.sh' -not -path '*/.git/*' -print0 |
+  xargs -0 -n1 bash -n
+if command -v python3 >/dev/null 2>&1 && [[ -d "$DEST/scripts" ]]; then
+  python3 -m compileall -q "$DEST/scripts" "$DEST/automations"
+fi
 
 # ----------------------------------------------------------------------
 # 4. HARD GATE: gitleaks. Any finding aborts the export.

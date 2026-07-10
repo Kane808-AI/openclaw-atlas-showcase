@@ -1,4 +1,4 @@
-#!/Users/chriskaneshiro/.openclaw/venv/google/bin/python3
+#!/usr/bin/env python3
 """
 youtube_auth_setup.py — One-time OAuth2 setup for YouTube Data API v3.
 

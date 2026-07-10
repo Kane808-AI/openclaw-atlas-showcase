@@ -2,29 +2,29 @@
 # One-time setup: create GCS bucket for Instagram Reels video staging
 # Run this ONCE to enable the Instagram Reels upload leg of the pipeline.
 #
-# Requires: support@brand75.com authenticated in gcloud
-#   Run: gcloud auth login --account support@brand75.com
+# Requires: automation@example.com authenticated in gcloud
+#   Run: gcloud auth login --account automation@example.com
 #
 # What this does:
-#   1. Creates gs://openclaw-instagram-staging in us-central1
+#   1. Creates gs://showcase-instagram-staging in us-central1
 #   2. Grants atlas-automation SA objectAdmin on that bucket
 #   3. Verifies the SA can upload a test object
 
 set -e
 
-BUCKET="openclaw-instagram-staging"
-PROJECT="openclaw-brand75-488404"
-SA="atlas-automation@openclaw-brand75-488404.iam.gserviceaccount.com"
+BUCKET="showcase-instagram-staging"
+PROJECT="showcase-gcp-project"
+SA="showcase-automation@showcase-gcp-project.iam.gserviceaccount.com"
 SA_KEY="$HOME/.openclaw/credentials/google/brand75-service-account.json"
 REGION="US"
 
 echo "==> Checking active gcloud account..."
 ACTIVE=$(gcloud config get-value account 2>/dev/null)
 echo "    Active account: $ACTIVE"
-if [[ "$ACTIVE" != "support@brand75.com" ]]; then
+if [[ "$ACTIVE" != "automation@example.com" ]]; then
   echo ""
   echo "ERROR: Run this first:"
-  echo "  gcloud auth login --account support@brand75.com"
+  echo "  gcloud auth login --account automation@example.com"
   exit 1
 fi
 
@@ -53,7 +53,7 @@ gcloud iam service-accounts add-iam-policy-binding "$SA" \
 echo "    signBlob permission applied"
 
 echo "==> Verifying upload with service account key..."
-/Users/chriskaneshiro/.openclaw/venv/google/bin/python3 - <<'EOF'
+/Users/example/.openclaw/venv/google/bin/python3 - <<'EOF'
 import pathlib, sys
 from google.cloud import storage
 from google.oauth2 import service_account
@@ -64,8 +64,8 @@ credentials = service_account.Credentials.from_service_account_file(
     str(sa_file),
     scopes=["https://www.googleapis.com/auth/cloud-platform"],
 )
-client = storage.Client(project="openclaw-brand75-488404", credentials=credentials)
-bucket = client.bucket("openclaw-instagram-staging")
+client = storage.Client(project="showcase-gcp-project", credentials=credentials)
+bucket = client.bucket("showcase-instagram-staging")
 blob = bucket.blob("instagram/_test_probe.txt")
 blob.upload_from_string(b"probe", content_type="text/plain")
 url = blob.generate_signed_url(version="v4", expiration=datetime.timedelta(minutes=5), method="GET", credentials=credentials)

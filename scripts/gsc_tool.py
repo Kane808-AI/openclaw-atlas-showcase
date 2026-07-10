@@ -9,7 +9,7 @@ Usage:
     gsc_tool.py index-status
     gsc_tool.py performance [--days N]
 
-Auth: Brand75 service account (DWD) impersonating support@brand75.com.
+Auth: Brand75 service account (DWD) impersonating automation@example.com.
       Falls back to personal OAuth2 token if service account lacks GSC access.
 """
 
@@ -31,7 +31,7 @@ def build_service():
         creds = get_brand75_credentials()
         service = build("searchconsole", "v1", credentials=creds, cache_discovery=False)
         service.sites().list().execute()
-        return service, "service-account (support@brand75.com)"
+        return service, "service-account (automation@example.com)"
     except HttpError as e:
         if e.resp.status not in (401, 403):
             raise

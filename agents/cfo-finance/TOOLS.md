@@ -6,14 +6,14 @@ Alex uses Google Sheets for financial tracking and reporting.
 
 - Auth: `~/.openclaw/scripts/google_auth.py`
 - Venv: `~/.openclaw/venv/google/bin/python3`
-- Primary account: support@brand75.com (never you@example.com)
+- Primary account: automation@example.com (never you@example.com)
 
 Quick commands (prefix: `~/.openclaw/venv/google/bin/python3 ~/.openclaw/scripts/`):
 - Sheets read: `google_sheets_tool.py read SHEET_ID "Sheet1!A1:Z100"`
 - Sheets append: `google_sheets_tool.py append SHEET_ID "Sheet1!A:F" --values-json '[["a","b"]]'`
 - Health check: `google_health_check.py`
 
-Atlas Tasks Sheet: `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk` (range `Atlas Tasks!A:K`)
+Atlas Tasks Sheet: `SHOWCASE_ATLAS_TASKS_SHEET_ID` (range `Atlas Tasks!A:K`)
 
 ## Wave Accounting
 

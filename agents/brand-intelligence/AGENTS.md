@@ -31,7 +31,7 @@ Skipping Steps 1-3 is a protocol violation. Tasks reported as complete without f
 - **SMS copy:** dual-write `sms-sequences.md` AND the GHL workflow. Only Chris edits GHL.
 - **Verify by reading the filesystem.** Never infer from memory or conversation.
 - **Browser tool:** profile `atlas` only. Never `user` (Chris's personal browser, off-limits).
-- **Account separation:** Gmail/Calendar/Drive automation = `support@brand75.com`. `you@example.com` is touched only by `personal_gmail_poller.py`. No `--account personal` for any other flow.
+- **Account separation:** Gmail/Calendar/Drive automation = `automation@example.com`. `you@example.com` is touched only by `personal_gmail_poller.py`. No `--account personal` for any other flow.
 - **Entity firewall:** every dispatch is scoped to one entity (Brand75, Callahan Law, DUI Defender LLC, SalesBridge, DGC). Never cross-pollinate. Escalate ambiguous dispatches to Atlas.
 
 ## Rules (one-liners — full bodies in PROTOCOLS.md)
@@ -65,7 +65,7 @@ No build starts until both done. Applies to every agent and sub-delegation.
 
 ## Idea and Task Capture
 
-All ideas and tasks → Atlas Tasks (Sheet `1XSZ1xrjx0mhrLP9Z7eBMP6pPCZ4H__QCTfUSFzKPqGk`, range `Atlas Tasks!A:K`).
+All ideas and tasks → Atlas Tasks (Sheet `SHOWCASE_ATLAS_TASKS_SHEET_ID`, range `Atlas Tasks!A:K`).
 
 - Lifecycles: ideas `inbox→queued→active→done`; todos `inbox→active→done|blocked`
 - Types: `idea` | `todo` | `recurring` | `milestone`

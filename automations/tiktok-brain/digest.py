@@ -21,7 +21,7 @@ from pathlib import Path
 TIKTOK_BRAIN_DIR = Path.home() / ".openclaw/workspace/notes/ideas/tiktok-brain"
 LAST_DIGEST_FILE = Path.home() / ".openclaw/automations/tiktok-brain/.last_digest"
 ENV_FILE = Path.home() / ".openclaw/.env"
-CHAT_ID = "7556461717"
+CHAT_ID = "SHOWCASE_TELEGRAM_CHAT_ID"
 
 # Max entries per digest message (Telegram has a 4096 char limit)
 MAX_PER_MESSAGE = 5
