@@ -36,6 +36,37 @@ and AI-search observations into a review queue. The useful part is the
 decision loop: collect signals, flag exceptions, give a person evidence, and
 record the disposition. It is not a promise of fully automated marketing.
 
+## The system shape
+
+The production system these patterns come from is a multi-agent operations
+fleet: one orchestrator, a small set of consolidated role agents, standing
+scheduled loops, and a monitoring tier. Every outward action crosses an
+approval gate, and every run leaves an audit record.
+
+```mermaid
+flowchart TB
+    subgraph Inputs
+        E[Inbound events<br/>email · chat · webhooks] --> O
+        S[Scheduled loops<br/>daily KPI pulls · content cycles<br/>site monitors] --> O
+    end
+    O[Atlas<br/>orchestrator] --> B[Builder<br/>code and integrations]
+    O --> G[Growth<br/>content and SEO drafts]
+    O --> P[Ops<br/>SOPs and workflows]
+    O --> R[Research<br/>read-only intelligence]
+    B & G & P & R --> Q[QA review<br/>independent, read-only]
+    Q --> A{Approval gate}
+    A -- human approves --> X[Execution<br/>send · publish · deploy]
+    A -- held --> H[Review queue]
+    X --> L[Audit log<br/>append-only]
+    Q --> L
+```
+
+Three properties carry the weight. The reviewer role cannot edit or execute,
+so verification stays independent of production. Drafting is autonomous but
+execution is not, which keeps the human at every consequential moment. And
+the audit log is append-only, so "what did the system do" is always a lookup
+rather than a reconstruction.
+
 ## Repository map
 
 ```text
